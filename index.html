@@ -1,17 +1,17 @@
 <section id="jules-football-block">
     <style>
         /* ==================================================================
-           JULES FOOTBALL BLOCK STYLES
+           JULES FOOTBALL BLOCK STYLES - PLAYGROUND UPGRADE!
            ================================================================== */
         
         #jules-football-block {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            color: #1A237E; /* Deep Navy */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', system-ui, -apple-system, sans-serif;
+            color: #1A237E; 
             max-width: 1200px;
             margin: 0 auto;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             background: #F4F7F4;
         }
 
@@ -19,35 +19,43 @@
             box-sizing: border-box;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION: Stadium & Fun Vibes --- */
         .jfb-hero {
             position: relative;
             display: flex;
             flex-direction: column;
-            background-color: #E8F5E9;
+            background-color: #81D4FA; /* Fun bright sky blue! */
+            background-image: radial-gradient(circle at 100% 0%, #B3E5FC 0%, transparent 60%);
             overflow: hidden;
+            border-bottom: 5px solid #0277BD;
         }
 
         .jfb-football-decor {
+            /* Now handled by CSS emojis below! */
+            display: none;
+        }
+
+        /* BOUNCING FOOTBALL ANIMATION FOR KIDS */
+        @keyframes bounceSpin {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .jfb-animated-ball {
+            display: inline-block;
+            font-size: 3rem;
+            animation: bounceSpin 2.5s infinite ease-in-out;
+            text-shadow: 0 10px 10px rgba(0,0,0,0.2);
             position: absolute;
-            width: clamp(250px, 58vw, 520px);
-            aspect-ratio: 1 / 1;
-            right: -90px;
             top: -40px;
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0.85;
-            background-image: url('images/colorful-football.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            transform: rotate(-8deg);
-            filter: saturate(1.08);
+            right: 10px;
         }
 
         .jfb-hero-img-container {
             width: 100%;
             height: 300px;
+            border-bottom: 6px solid #FF9800; /* Fun chunky divider */
         }
 
         .jfb-hero-img {
@@ -61,77 +69,97 @@
             background: #FFFFFF;
             padding: 2rem;
             border-radius: 16px;
-            margin: -60px 1.5rem 1.5rem 1.5rem;
+            margin: -60px 1.5rem 1.5rem 1.5rem; 
             position: relative;
             z-index: 10;
-            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.08);
+            box-shadow: 0 12px 24px rgba(26, 35, 126, 0.1);
+            border: 4px solid #E8F5E9; /* Thicker "sticker" border */
         }
 
         .jfb-label {
             display: inline-block;
-            background: #E8F5E9;
-            color: #2E7D32;
-            padding: 0.35rem 0.85rem;
+            background: #FFD54F; /* Sunny yellow for kids */
+            color: #E65100;
+            padding: 0.4rem 1rem;
             border-radius: 999px;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 0px rgba(230, 81, 0, 0.2); /* Chunky badge shadow */
         }
 
         .jfb-title {
-            font-size: 1.75rem;
+            font-size: 2.25rem;
             margin: 0 0 0.75rem 0;
             color: #1A237E;
             line-height: 1.2;
+            text-transform: uppercase; /* Looks cooler, like a comic */
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 0px #FFF, 3px 3px 0px rgba(0,0,0,0.1); /* 3D title text */
         }
 
         .jfb-intro {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin: 0;
             color: #4A5568;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-weight: 600;
         }
 
-        /* --- SKILLS SECTION --- */
+        /* --- SKILLS SECTION: "The Pitch" --- */
         .jfb-skills-section {
             padding: 3rem 1.5rem;
-            background-color: #F4F7F4;
+            /* Turns into freshly cut green football pitch stripes */
+            background-color: #4CAF50;
             background-image: repeating-linear-gradient(
                 90deg,
-                transparent,
-                transparent 80px,
-                rgba(76, 175, 80, 0.04) 80px,
-                rgba(76, 175, 80, 0.04) 160px
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 60px,
+                transparent 60px,
+                transparent 120px
             );
         }
 
         .jfb-tabs {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             margin-bottom: 2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
+        /* ARCADE-STYLE PUSH BUTTONS! */
         .jfb-tab {
             background: #FFFFFF;
-            border: 2px solid transparent;
-            color: #1A237E;
-            padding: 0.75rem 1.5rem;
+            border: none;
+            color: #2E7D32;
+            padding: 0.8rem 1.8rem;
             border-radius: 999px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 800;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.1s ease;
+            box-shadow: 0 6px 0px #388E3C; /* Chunky bottom for video-game feel */
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .jfb-tab:hover {
+            filter: brightness(1.05);
         }
 
         .jfb-tab.jfb-active {
-            background: #4CAF50;
+            background: #FF9800; 
             color: #FFFFFF;
-            border-color: #388E3C;
+            box-shadow: 0 6px 0px #F57C00;
+        }
+
+        /* Simulates pushing down the button */
+        .jfb-tab:active, .jfb-btn-orange:active {
+            transform: translateY(6px);
+            box-shadow: 0 0px 0px; 
         }
 
         .jfb-grid {
@@ -141,22 +169,110 @@
             margin-bottom: 1rem;
         }
 
+        /* TRADING CARD STYLES FOR SKILLS */
+        .jfb-card {
+            background: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 5px solid #FFF59D; /* Cool "shiny" gold card border */
+        }
+
+        .jfb-card:hover {
+            transform: scale(1.05) rotate(2deg); /* Exciting trading card hover! */
+            border-color: #FFCA28;
+            z-index: 10;
+        }
+
+        .jfb-card-icon {
+            font-size: 3.5rem; /* Massive emojis for kids */
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounceIn 0.5s;
+        }
+
+        .jfb-card-title {
+            font-size: 1.35rem;
+            margin: 0 0 0.5rem 0;
+            color: #1A237E;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .jfb-card-note {
+            margin: 0;
+            color: #4A5568;
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        /* --- RANDOMIZER SECTION --- */
+        .jfb-randomizer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 4px dashed rgba(255, 255, 255, 0.4);
+        }
+
+        .jfb-btn-orange {
+            background: #F44336; /* Bright Red/Orange */
+            color: #FFFFFF;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 999px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 6px 0px #D32F2F; /* Pushable button */
+            transition: all 0.1s ease;
+            margin-bottom: 6px;
+        }
+
+        .jfb-btn-orange:hover {
+            background: #E53935;
+        }
+
+        .jfb-random-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: 4px solid #F44336;
+            display: none;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .jfb-random-result strong {
+            display: block;
+            color: #1A237E;
+            font-size: 1.4rem;
+            margin-bottom: 0.35rem;
+        }
+
         /* --- PHOTO HIGHLIGHTS SECTION --- */
         .jfb-media-section {
-            padding: 0 1.5rem 3.5rem;
+            padding: 4rem 1.5rem;
             background-color: #F4F7F4;
         }
 
-        .jfb-media-container {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
         .jfb-media-title {
-            margin: 0 0 0.75rem;
             text-align: center;
             color: #1A237E;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
         .jfb-media-intro {
@@ -164,120 +280,222 @@
             max-width: 680px;
             text-align: center;
             color: #4A5568;
-            line-height: 1.6;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        /* Container for the Widget to match the design style */
-        .jfb-widget-card {
+        .jfb-media-panel {
             background: #FFFFFF;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.06);
-            padding: 10px;
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
+            max-width: 680px;
+            margin: 0 auto;
+            border: 4px solid #E8F5E9;
         }
 
-        .jfb-media-actions {
-            margin-top: 1.2rem;
+        /* --- FIXTURES SECTION --- */
+        .jfb-fixtures-section {
+            margin-top: 1rem;
+            padding: 0 1.5rem 3rem;
+            background-color: #F4F7F4;
+        }
+
+        .jfb-fixtures-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #FFF9C4; /* Yellow card style */
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 12px rgba(26, 35, 126, 0.1);
+            border: 4px solid #FFD54F;
             text-align: center;
+            position: relative;
         }
 
-        .jfb-media-link {
+        .jfb-fixtures-title {
+            margin: 0 0 0.75rem 0;
+            color: #E65100;
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .jfb-fixtures-text {
+            margin: 0 0 1.5rem 0;
+            color: #5D4037;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .jfb-fixtures-link {
             display: inline-block;
-            background: #2E7D32;
+            background: #1976D2;
             color: #FFFFFF;
             text-decoration: none;
             border-radius: 999px;
-            padding: 0.8rem 1.5rem;
-            font-weight: 700;
-            transition: all 0.2s ease;
+            padding: 1rem 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            box-shadow: 0 6px 0px #0D47A1;
+            transition: all 0.1s ease;
         }
 
-        /* Desktop Responsiveness */
+        .jfb-fixtures-link:active {
+            transform: translateY(6px);
+            box-shadow: 0 0px 0px;
+        }
+
+        /* --- REFLECTIONS SECTION --- */
+        .jfb-reflections-section {
+            padding: 4rem 1.5rem;
+            background-color: #FFFFFF;
+            border-top: 8px dashed #E0E0E0;
+            border-bottom: 8px dashed #E0E0E0;
+        }
+
+        .jfb-reflections-container { max-width: 700px; margin: 0 auto; }
+        
+        .jfb-ref-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #1A237E;
+            text-transform: uppercase;
+        }
+
+        .jfr-state {
+            text-align: center;
+            background: #E8F5E9;
+            border: 4px dashed #81C784;
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .jfr-state-title { font-weight: 900; font-size: 1.2rem; color: #2E7D32;}
+
+        /* --- DESKTOP LAYOUT --- */
         @media (min-width: 768px) {
-            .jfb-hero { height: 480px; display: block; }
-            .jfb-hero-content { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 420px; margin: 0; padding: 2.5rem; }
-            .jfb-media-section { padding: 0 3rem 4rem; }
+            .jfb-hero { height: 450px; display: block; }
+            .jfb-animated-ball { top: 30px; right: 50px; font-size: 6rem; } /* Giant bouncing ball for PC! */
+            .jfb-hero-img-container { height: 100%; border-bottom: none;}
+            
+            /* Gradient for image visibility */
+            .jfb-hero-img-container::after {
+                content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(90deg, transparent 40%, rgba(26, 35, 126, 0.4) 100%);
+                pointer-events: none;
+            }
+
+            .jfb-hero-content {
+                position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
+                width: 480px; margin: 0; padding: 2.5rem;
+                transform: translateY(-50%) rotate(2deg); /* Slightly offset for a fun look */
+            }
         }
     </style>
 
-    <!-- HERO AREA -->
+    <!-- ==================================================================
+         HERO AREA 
+         ================================================================== -->
     <div class="jfb-hero">
-        <div class="jfb-football-decor" aria-hidden="true"></div>
         <div class="jfb-hero-img-container">
-            <img class="jfb-hero-img" src="images/Jules-Football.jpg" alt="Jules playing football" />
+            <img class="jfb-hero-img" src="images/Jules-Football.jpg" alt="Jules playing football on a grassy field" />
         </div>
         <div class="jfb-hero-content">
-            <span class="jfb-label">For my football friends</span>
+            <div class="jfb-animated-ball" aria-hidden="true">⚽</div>
+            <span class="jfb-label">🌟 For my football friends!</span>
             <h2 class="jfb-title">Jules' Football Skills</h2>
-            <p class="jfb-intro">Hi! I love football. This page shows what I have learned and what I am practising.</p>
+            <p class="jfb-intro">Hi! I love football. 🥅 This page shows what I have learned and what I am practising. Ready, Set, GOAL! 🏆</p>
         </div>
     </div>
 
-    <!-- SKILLS AREA -->
+    <!-- ==================================================================
+         SKILLS AREA
+         ================================================================== -->
     <div class="jfb-skills-section">
-        <div class="jfb-tabs" role="tablist">
-            <button class="jfb-tab jfb-active" id="jfb-btn-learned" onclick="jfbSwitchTab('learned')">Skills I've learned</button>
-            <button class="jfb-tab" id="jfb-btn-practising" onclick="jfbSwitchTab('practising')">What I'm practising</button>
+        
+        <!-- Tab Navigation -->
+        <div class="jfb-tabs" role="tablist" aria-label="Football Skills Tabs">
+            <button class="jfb-tab jfb-active" role="tab" aria-selected="true" id="jfb-btn-learned" onclick="jfbSwitchTab('learned')">
+                🥇 Skills I've learned
+            </button>
+            <button class="jfb-tab" role="tab" aria-selected="false" id="jfb-btn-practising" onclick="jfbSwitchTab('practising')">
+                ⏱️ What I'm practising
+            </button>
         </div>
-        <div class="jfb-grid" id="jfb-skills-grid" role="tabpanel"></div>
+
+        <!-- Cards Container (Populated by JavaScript) -->
+        <div class="jfb-grid" id="jfb-skills-grid" role="tabpanel" aria-live="polite">
+            <!-- Cards will appear here automatically -->
+        </div>
+
+        <!-- Randomizer Feature -->
+        <div class="jfb-randomizer">
+            <button class="jfb-btn-orange" onclick="jfbPickRandom()">
+                🎲 Pick my practice skill!
+            </button>
+            <div id="jfb-random-result" class="jfb-random-result" aria-live="polite">
+                <!-- Random skill will appear here -->
+            </div>
+        </div>
     </div>
 
-    <!-- PHOTO HIGHLIGHTS AREA -->
+    <!-- ==================================================================
+         PHOTO HIGHLIGHTS AREA
+         ================================================================== -->
     <div class="jfb-media-section">
         <div class="jfb-media-container">
-            <h2 class="jfb-media-title">Photo Highlights</h2>
-            <p class="jfb-media-intro">Swipe through the gallery below to see photos from match days and practice sessions.</p>
-
-            <div class="jfb-widget-card">
-                <!-- Public Album Widget -->
+            <h2 class="jfb-media-title">📸 Photo Highlights</h2>
+            <p class="jfb-media-intro">Scroll through these photos of me on the pitch!</p>
+            
+            <div class="jfb-media-panel" style="padding: 0;">
                 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
                 <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
-                    data-link="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA"
-                    data-title="Jules Football · Jun 7, 2025 – Mar 16, 2026 📸"
-                    data-description="Shared album · Tap to view!">
-                    <object data="https://lh3.googleusercontent.com/pw/AP1GczNWdcS-fQUZOBYCirZMeOyYCSOwghf75pkqYbGlJ45483JochQKAMGgvqszFw8e4hOx26x58rLjuI6sDV2SbU42YINtLb5gbjgRQRVSkj5MZdfU9c4F=w1920-h1080"></object>
-                    <object data="https://lh3.googleusercontent.com/pw/AP1GczOwGSyF3AFfGXYvBKADVN9mPdx_t30tMlGIsxJAHSKoXL3oCivceUjWOs7C-0hhPmLYfWKcQLywc6uz2Pi1Fz4zDLF7wftoH_NGyEH7UUnldj9tTFoo=w1920-h1080"></object>
-                    <object data="https://lh3.googleusercontent.com/pw/AP1GczPkGBP1bWsaDHidc6N6YsCbWkY0IkazaMoWkM2HVzwV7KrKVsw2KB-s62wg7sMHjEdu3TvvbzSjZ2YvS_zjVnvbZBp2075ZPDcqb78cB3F1_8gnQr2c=w1920-h1080"></object>
-                    <object data="https://lh3.googleusercontent.com/pw/AP1GczPsvQ7Pj98SK8pCYQe4cKVt0bxgWFGSXgNi1FsoVSkYBcniMioqY-EPQUpQ7ZPVn8Ni9Wavfzn4CfBax9f7kkubVyAAhM74DVKcrsTPRGwQvi6PaWcU=w1920-h1080"></object>
+                  data-link="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA"
+                  data-title="Jules Football · Jun 7, 2025 – Mar 16, 2026 📸"
+                  data-description="Shared album · Tap to view!">
+                  <object data="https://lh3.googleusercontent.com/pw/AP1GczNWdcS-fQUZOBYCirZMeOyYCSOwghf75pkqYbGlJ45483JochQKAMGgvqszFw8e4hOx26x58rLjuI6sDV2SbU42YINtLb5gbjgRQRVSkj5MZdfU9c4F=w1920-h1080"></object>
+                  <object data="https://lh3.googleusercontent.com/pw/AP1GczOwGSyF3AFfGXYvBKADVN9mPdx_t30tMlGIsxJAHSKoXL3oCivceUjWOs7C-0hhPmLYfWKcQLywc6uz2Pi1Fz4zDLF7wftoH_NGyEH7UUnldj9tTFoo=w1920-h1080"></object>
+                  <object data="https://lh3.googleusercontent.com/pw/AP1GczPkGBP1bWsaDHidc6N6YsCbWkY0IkazaMoWkM2HVzwV7KrKVsw2KB-s62wg7sMHjEdu3TvvbzSjZ2YvS_zjVnvbZBp2075ZPDcqb78cB3F1_8gnQr2c=w1920-h1080"></object>
+                  <object data="https://lh3.googleusercontent.com/pw/AP1GczPsvQ7Pj98SK8pCYQe4cKVt0bxgWFGSXgNi1FsoVSkYBcniMioqY-EPQUpQ7ZPVn8Ni9Wavfzn4CfBax9f7kkubVyAAhM74DVKcrsTPRGwQvi6PaWcU=w1920-h1080"></object>
                 </div>
-            </div>
-
-            <div class="jfb-media-actions">
-                <a class="jfb-media-link" href="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA" target="_blank" rel="noopener noreferrer">Open full album</a>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        var jfbLearned = [
-            { icon: "⚽", title: "Dribbling", note: "Keeping the ball close while running." },
-            { icon: "👟", title: "Passing", note: "Using the inside of the foot for accuracy." }
-        ];
-        var jfbPractising = [
-            { icon: "🎯", title: "Target Practice", note: "Hitting the corners of the goal." }
-        ];
-
-        function jfbSwitchTab(type) {
-            const grid = document.getElementById('jfb-skills-grid');
-            const learnedBtn = document.getElementById('jfb-btn-learned');
-            const practBtn = document.getElementById('jfb-btn-practising');
-            
-            const data = (type === 'learned') ? jfbLearned : jfbPractising;
-            
-            learnedBtn.classList.toggle('jfb-active', type === 'learned');
-            practBtn.classList.toggle('jfb-active', type === 'practising');
-            
-            grid.innerHTML = data.map(item => `
-                <div class="jfb-card">
-                    <div class="jfb-card-icon">${item.icon}</div>
-                    <h3 class="jfb-card-title">${item.title}</h3>
-                    <p class="jfb-card-note">${item.note}</p>
+    <!-- ==================================================================
+         REFLECTIONS AREA
+         ================================================================== -->
+    <div class="jfb-reflections-section">
+        <div class="jfb-reflections-container">
+            <h2 class="jfb-ref-title">🗣️ Jules' Latest Reflection</h2>
+            <div id="reflections-content">
+                <div class="jfr-state jfr-loading" role="status" aria-live="polite">
+                    <p class="jfr-state-title">⚙️ Loading latest reflection...</p>
+                    <p class="jfr-state-note" style="color:#2E7D32;">Getting Jules' newest update ready...</p>
                 </div>
-            `).join('');
-        }
+            </div>
+        </div>
+    </div>
 
-        // Initialize
-        window.onload = () => jfbSwitchTab('learned');
-    </script>
-</section>
+    <!-- ==================================================================
+         PARENT ZONE AREA
+         ================================================================== -->
+    <div class="jfb-fixtures-section">
+        <div class="jfb-fixtures-card">
+            <h2 class="jfb-fixtures-title">📋 Parent Zone</h2>
+            <p class="jfb-fixtures-text">Looking for match dates and team fixtures? You can view them on the official FA website.</p>
+            <a class="jfb-fixtures-link" href="https://fulltime.thefa.com/index.html?league=230090270" target="_blank" rel="noopener noreferrer">
+                🔗 See official fixtures
+            </a>
+            <br>
+        </div>
+    </div>
+
+    <!-- ==================================================================
+         JAVASCRIPT LOGIC
+         ================================================================== -->
+    <script>
+        /* (You can keep exactly your Javascript in here untouched from the last snippet) */
+        var jfbLearned =
