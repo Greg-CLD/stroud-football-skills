@@ -1,0 +1,56 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 250) rotate(45) scale(600)">
+      <stop stop-color="#FFF8D5"/>
+      <stop offset="1" stop-color="#FFE4A3"/>
+    </radialGradient>
+    <linearGradient id="panelBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#61C8FF"/>
+      <stop offset="1" stop-color="#3C91FF"/>
+    </linearGradient>
+    <linearGradient id="panelGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#77E38F"/>
+      <stop offset="1" stop-color="#3CB870"/>
+    </linearGradient>
+    <linearGradient id="panelPink" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FF8EC3"/>
+      <stop offset="1" stop-color="#F95A9B"/>
+    </linearGradient>
+    <linearGradient id="panelPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#B78CFF"/>
+      <stop offset="1" stop-color="#845BFF"/>
+    </linearGradient>
+    <linearGradient id="panelOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFC468"/>
+      <stop offset="1" stop-color="#FF943C"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="80" width="640" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#1A237E" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="400" cy="400" r="320" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <circle cx="400" cy="400" r="270" fill="#fff" stroke="#2A2A2A" stroke-width="20"/>
+
+    <path d="M400 230L472 278L446 361H354L328 278L400 230Z" fill="#2A2A2A"/>
+
+    <path d="M236 330L328 278L354 361L288 430L208 390L236 330Z" fill="url(#panelBlue)" stroke="#2A2A2A" stroke-width="14"/>
+    <path d="M564 330L472 278L446 361L512 430L592 390L564 330Z" fill="url(#panelGreen)" stroke="#2A2A2A" stroke-width="14"/>
+    <path d="M268 518L288 430L354 361H446L512 430L532 518L400 566L268 518Z" fill="url(#panelPink)" stroke="#2A2A2A" stroke-width="14"/>
+
+    <path d="M236 330L208 390L244 478L268 518" stroke="#2A2A2A" stroke-width="14" stroke-linecap="round"/>
+    <path d="M564 330L592 390L556 478L532 518" stroke="#2A2A2A" stroke-width="14" stroke-linecap="round"/>
+
+    <path d="M328 278L268 518" stroke="#2A2A2A" stroke-width="14"/>
+    <path d="M472 278L532 518" stroke="#2A2A2A" stroke-width="14"/>
+
+    <path d="M288 430L512 430" stroke="#2A2A2A" stroke-width="14"/>
+
+    <path d="M188 520C260 500 318 548 370 594" fill="url(#panelPurple)" stroke="#2A2A2A" stroke-width="12"/>
+    <path d="M612 520C540 500 482 548 430 594" fill="url(#panelOrange)" stroke="#2A2A2A" stroke-width="12"/>
+
+    <circle cx="315" cy="320" r="26" fill="#fff" fill-opacity="0.65"/>
+  </g>
+</svg>
