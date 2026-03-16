@@ -271,23 +271,18 @@
             line-height: 1.6;
         }
 
-        .jfb-media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-        }
-
-        .jfb-media-card {
-            margin: 0;
+        .jfb-media-panel {
             background: #FFFFFF;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(26, 35, 126, 0.06);
+            max-width: 680px;
+            margin: 0 auto;
         }
 
         .jfb-media-image {
             width: 100%;
-            height: 210px;
+            height: 320px;
             object-fit: cover;
             display: block;
         }
@@ -301,7 +296,7 @@
         }
 
         .jfb-media-actions {
-            margin-top: 1.4rem;
+            margin-top: 1.2rem;
             text-align: center;
         }
 
@@ -326,6 +321,12 @@
             margin: 0.75rem 0 0;
             color: #6B7280;
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 767px) {
+            .jfb-media-image {
+                height: 230px;
+            }
         }
 
         /* --- FIXTURES SECTION --- */
@@ -597,25 +598,15 @@
     <div class="jfb-media-section">
         <div class="jfb-media-container">
             <h2 class="jfb-media-title">Photo Highlights</h2>
-            <p class="jfb-media-intro">A few football moments from practice and match days. For the full album, use the button below.</p>
+            <p class="jfb-media-intro">You can see Jules' full photo album on Google Photos. Here's one quick preview from the football page.</p>
 
-            <div class="jfb-media-grid" aria-label="Football photo highlights">
-                <figure class="jfb-media-card">
-                    <img class="jfb-media-image" src="images/Jules-Football.jpg" alt="Jules running with the football on the grass" loading="lazy" />
-                    <figcaption class="jfb-media-caption">Keeping the ball close while moving forward.</figcaption>
-                </figure>
-                <figure class="jfb-media-card">
-                    <img class="jfb-media-image" src="images/hero.jpg" alt="A football training moment on the pitch" loading="lazy" />
-                    <figcaption class="jfb-media-caption">Practising first touch and quick turns.</figcaption>
-                </figure>
-                <figure class="jfb-media-card">
-                    <img class="jfb-media-image" src="images/Jules-Football.jpg" alt="A football action shot during play" loading="lazy" />
-                    <figcaption class="jfb-media-caption">Working hard and having fun with football friends.</figcaption>
-                </figure>
-            </div>
+            <figure class="jfb-media-panel">
+                <img class="jfb-media-image" src="images/Jules-Football.jpg" alt="Jules running with the football on the grass" loading="lazy" />
+                <figcaption class="jfb-media-caption">More match day and practice moments are in the full Google Photos album.</figcaption>
+            </figure>
 
             <div class="jfb-media-actions">
-                <a class="jfb-media-link" href="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA" target="_blank" rel="noopener noreferrer">See full photo album</a>
+                <a class="jfb-media-link" href="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA" target="_blank" rel="noopener noreferrer">Open full album</a>
                 <p class="jfb-media-note">Opens Google Photos in a new tab.</p>
             </div>
         </div>
