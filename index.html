@@ -27,6 +27,24 @@
             display: flex;
             flex-direction: column;
             background-color: #E8F5E9;
+            overflow: hidden;
+        }
+
+        .jfb-football-decor {
+            position: absolute;
+            width: clamp(250px, 58vw, 520px);
+            aspect-ratio: 1 / 1;
+            right: -90px;
+            top: -40px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.85;
+            background-image: url('images/colorful-football.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            transform: rotate(-8deg);
+            filter: saturate(1.08);
         }
 
         .jfb-hero-img-container {
@@ -49,6 +67,12 @@
             position: relative;
             z-index: 10;
             box-shadow: 0 8px 24px rgba(26, 35, 126, 0.08);
+        }
+
+        .jfb-hero-img-container,
+        .jfb-hero-content {
+            position: relative;
+            z-index: 3;
         }
 
         .jfb-label {
@@ -378,6 +402,13 @@
                 display: block;
             }
 
+            .jfb-football-decor {
+                width: min(42vw, 500px);
+                right: -70px;
+                top: 10px;
+                opacity: 0.8;
+            }
+
             .jfb-hero-img-container {
                 height: 100%;
             }
@@ -428,6 +459,7 @@
          HERO AREA
          ================================================================== -->
     <div class="jfb-hero">
+        <div class="jfb-football-decor" aria-hidden="true"></div>
         <div class="jfb-hero-img-container">
             <img class="jfb-hero-img" src="images/Jules-Football.jpg" alt="Jules playing football on a grassy field" />
         </div>
