@@ -3,10 +3,10 @@
         /* ==================================================================
            JULES FOOTBALL BLOCK STYLES - PLAYGROUND UPGRADE!
            ================================================================== */
-        
+
         #jules-football-block {
             font-family: 'Comic Sans MS', 'Chalkboard SE', system-ui, -apple-system, sans-serif;
-            color: #1A237E; 
+            color: #1A237E;
             max-width: 1200px;
             margin: 0 auto;
             border-radius: 24px;
@@ -69,7 +69,7 @@
             background: #FFFFFF;
             padding: 2rem;
             border-radius: 16px;
-            margin: -60px 1.5rem 1.5rem 1.5rem; 
+            margin: -60px 1.5rem 1.5rem 1.5rem;
             position: relative;
             z-index: 10;
             box-shadow: 0 12px 24px rgba(26, 35, 126, 0.1);
@@ -151,7 +151,7 @@
         }
 
         .jfb-tab.jfb-active {
-            background: #FF9800; 
+            background: #FF9800;
             color: #FFFFFF;
             box-shadow: 0 6px 0px #F57C00;
         }
@@ -159,7 +159,7 @@
         /* Simulates pushing down the button */
         .jfb-tab:active, .jfb-btn-orange:active {
             transform: translateY(6px);
-            box-shadow: 0 0px 0px; 
+            box-shadow: 0 0px 0px;
         }
 
         .jfb-grid {
@@ -261,39 +261,6 @@
             margin-bottom: 0.35rem;
         }
 
-        /* --- PHOTO HIGHLIGHTS SECTION --- */
-        .jfb-media-section {
-            padding: 4rem 1.5rem;
-            background-color: #F4F7F4;
-        }
-
-        .jfb-media-title {
-            text-align: center;
-            color: #1A237E;
-            font-size: 2.2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .jfb-media-intro {
-            margin: 0 auto 1.5rem;
-            max-width: 680px;
-            text-align: center;
-            color: #4A5568;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .jfb-media-panel {
-            background: #FFFFFF;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
-            max-width: 680px;
-            margin: 0 auto;
-            border: 4px solid #E8F5E9;
-        }
-
         /* --- FIXTURES SECTION --- */
         .jfb-fixtures-section {
             margin-top: 1rem;
@@ -345,41 +312,12 @@
             box-shadow: 0 0px 0px;
         }
 
-        /* --- REFLECTIONS SECTION --- */
-        .jfb-reflections-section {
-            padding: 4rem 1.5rem;
-            background-color: #FFFFFF;
-            border-top: 8px dashed #E0E0E0;
-            border-bottom: 8px dashed #E0E0E0;
-        }
-
-        .jfb-reflections-container { max-width: 700px; margin: 0 auto; }
-        
-        .jfb-ref-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #1A237E;
-            text-transform: uppercase;
-        }
-
-        .jfr-state {
-            text-align: center;
-            background: #E8F5E9;
-            border: 4px dashed #81C784;
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .jfr-state-title { font-weight: 900; font-size: 1.2rem; color: #2E7D32;}
-
         /* --- DESKTOP LAYOUT --- */
         @media (min-width: 768px) {
             .jfb-hero { height: 450px; display: block; }
             .jfb-animated-ball { top: 10px; right: 30px; font-size: 6rem; } /* Giant bouncing ball for PC! */
             .jfb-hero-img-container { height: 100%; border-bottom: none;}
-            
+
             /* Gradient for image visibility */
             .jfb-hero-img-container::after {
                 content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -396,17 +334,18 @@
     </style>
 
     <!-- ==================================================================
-         HERO AREA 
+         HERO AREA
          ================================================================== -->
     <div class="jfb-hero">
         <div class="jfb-hero-img-container">
-            <img class="jfb-hero-img" src="images/Jules-Football.jpg" alt="Jules playing football on a grassy field" />
+            <!-- Replace with group/club hero image -->
+            <img class="jfb-hero-img" src="" alt="Young football players on a grassy pitch" />
         </div>
         <div class="jfb-hero-content">
             <div class="jfb-animated-ball" aria-hidden="true">⚽</div>
-            <span class="jfb-label">🌟 For my football friends!</span>
-            <h2 class="jfb-title">Jules' Football Skills</h2>
-            <p class="jfb-intro">Hi! I love football. 🥅 This page shows what I have learned and what I am practising. Ready, Set, GOAL! 🏆</p>
+            <span class="jfb-label">🌟 For young football stars!</span>
+            <h2 class="jfb-title">Champion Football Stroud</h2>
+            <p class="jfb-intro">Welcome! We love football. 🥅 This page is all about skills, practice, and having fun on the pitch! Ready, Set, GOAL! 🏆</p>
         </div>
     </div>
 
@@ -414,14 +353,14 @@
          SKILLS AREA
          ================================================================== -->
     <div class="jfb-skills-section">
-        
+
         <!-- Tab Navigation -->
         <div class="jfb-tabs" role="tablist" aria-label="Football Skills Tabs">
             <button class="jfb-tab jfb-active" role="tab" aria-selected="true" id="jfb-btn-learned" onclick="jfbSwitchTab('learned')">
-                🥇 Skills I've learned
+                🥇 Skills We've Learned
             </button>
             <button class="jfb-tab" role="tab" aria-selected="false" id="jfb-btn-practising" onclick="jfbSwitchTab('practising')">
-                ⏱️ What I'm practising
+                ⏱️ Skills to Practise
             </button>
         </div>
 
@@ -433,48 +372,10 @@
         <!-- Randomizer Feature -->
         <div class="jfb-randomizer">
             <button class="jfb-btn-orange" onclick="jfbPickRandom()">
-                🎲 Pick my practice skill!
+                🎲 Pick a practice skill!
             </button>
             <div id="jfb-random-result" class="jfb-random-result" aria-live="polite">
                 <!-- Random skill will appear here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================================================================
-         PHOTO HIGHLIGHTS AREA
-         ================================================================== -->
-    <div class="jfb-media-section">
-        <div class="jfb-media-container">
-            <h2 class="jfb-media-title">📸 Photo Highlights</h2>
-            <p class="jfb-media-intro">Scroll through these photos of me on the pitch!</p>
-            
-            <div class="jfb-media-panel" style="padding: 0;">
-                <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-                <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
-                  data-link="https://photos.app.goo.gl/dnJ1cSwGkhvMfb1WA"
-                  data-title="Jules Football · Jun 7, 2025 – Mar 16, 2026 📸"
-                  data-description="Shared album · Tap to view!">
-                  <object data="https://lh3.googleusercontent.com/pw/AP1GczNWdcS-fQUZOBYCirZMeOyYCSOwghf75pkqYbGlJ45483JochQKAMGgvqszFw8e4hOx26x58rLjuI6sDV2SbU42YINtLb5gbjgRQRVSkj5MZdfU9c4F=w1920-h1080"></object>
-                  <object data="https://lh3.googleusercontent.com/pw/AP1GczOwGSyF3AFfGXYvBKADVN9mPdx_t30tMlGIsxJAHSKoXL3oCivceUjWOs7C-0hhPmLYfWKcQLywc6uz2Pi1Fz4zDLF7wftoH_NGyEH7UUnldj9tTFoo=w1920-h1080"></object>
-                  <object data="https://lh3.googleusercontent.com/pw/AP1GczPkGBP1bWsaDHidc6N6YsCbWkY0IkazaMoWkM2HVzwV7KrKVsw2KB-s62wg7sMHjEdu3TvvbzSjZ2YvS_zjVnvbZBp2075ZPDcqb78cB3F1_8gnQr2c=w1920-h1080"></object>
-                  <object data="https://lh3.googleusercontent.com/pw/AP1GczPsvQ7Pj98SK8pCYQe4cKVt0bxgWFGSXgNi1FsoVSkYBcniMioqY-EPQUpQ7ZPVn8Ni9Wavfzn4CfBax9f7kkubVyAAhM74DVKcrsTPRGwQvi6PaWcU=w1920-h1080"></object>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================================================================
-         REFLECTIONS AREA
-         ================================================================== -->
-    <div class="jfb-reflections-section">
-        <div class="jfb-reflections-container">
-            <h2 class="jfb-ref-title">🗣️ Jules' Latest Reflection</h2>
-            <div id="reflections-content">
-                <div class="jfr-state jfr-loading" role="status" aria-live="polite">
-                    <p class="jfr-state-title">⚙️ Loading latest reflection...</p>
-                    <p class="jfr-state-note" style="color:#2E7D32;">Getting Jules' newest update ready...</p>
-                </div>
             </div>
         </div>
     </div>
@@ -498,17 +399,17 @@
          ================================================================== -->
     <script>
         var jfbLearned = [
-            { icon: '⚽', name: 'Passing with both feet', note: 'I can pass to my teammate with my right and left foot.' },
-            { icon: '🏃', name: 'Dribbling in space', note: 'I keep the ball close when I run through cones.' },
-            { icon: '🛡️', name: 'Defending position', note: 'I stay goal-side and slow the attacker down.' },
-            { icon: '🎯', name: 'Aiming shots', note: 'I look up and try to shoot into the corners.' }
+            { icon: '⚽', name: 'Passing with both feet', note: 'Pass to your teammate with your right and left foot.' },
+            { icon: '🏃', name: 'Dribbling in space', note: 'Keep the ball close when dribbling through cones.' },
+            { icon: '🛡️', name: 'Defending position', note: 'Stay goal-side and slow the attacker down.' },
+            { icon: '🎯', name: 'Aiming shots', note: 'Look up and try to shoot into the corners.' }
         ];
 
         var jfbPractising = [
-            { icon: '🔄', name: 'Drag backs', note: 'Pulling the ball back quickly to change direction.' },
+            { icon: '🔄', name: 'Drag backs', note: 'Pull the ball back quickly to change direction.' },
             { icon: '🦵', name: 'Keep ups', note: 'Foot-to-knee touches with good control.' },
-            { icon: '👀', name: 'Scanning before pass', note: 'Looking up before I receive and pass.' },
-            { icon: '⚡', name: 'Recovering quickly', note: 'Running back to position straight after a goal.' }
+            { icon: '👀', name: 'Scanning before pass', note: 'Look up before you receive and pass.' },
+            { icon: '⚡', name: 'Recovering quickly', note: 'Run back to position straight after a goal.' }
         ];
 
         function jfbRenderSkills(category) {
@@ -546,58 +447,8 @@
             result.innerHTML = '<strong>' + choice.icon + ' ' + choice.name + '</strong><span>' + choice.note + '</span>';
         }
 
-        function jfbRenderReflection(markdown) {
-            var container = document.getElementById('reflections-content');
-            var latestMatch = markdown.match(/##\s+Latest reflection([\s\S]*)$/i);
-
-            if (!latestMatch) {
-                container.innerHTML = '<div class="jfr-state"><p class="jfr-state-title">No reflection found yet.</p></div>';
-                return;
-            }
-
-            var sectionText = latestMatch[1];
-            var headingRegex = /^###\s+(.+)$/gm;
-            var headings = [];
-            var match;
-
-            while ((match = headingRegex.exec(sectionText)) !== null) {
-                headings.push({ title: match[1], index: match.index, length: match[0].length });
-            }
-
-            var html = '<h2>Latest reflection</h2>';
-            headings.forEach(function(item, idx) {
-                var start = item.index + item.length;
-                var end = idx + 1 < headings.length ? headings[idx + 1].index : sectionText.length;
-                var block = sectionText.slice(start, end);
-                var bullets = block
-                    .split('\n')
-                    .map(function(line) { return line.trim(); })
-                    .filter(function(line) { return line.indexOf('- ') === 0; })
-                    .map(function(line) { return '<li>' + line.slice(2) + '</li>'; })
-                    .join('');
-
-                html += '<h3>' + item.title + '</h3>';
-                html += bullets ? '<ul>' + bullets + '</ul>' : '<p>No details yet.</p>';
-            });
-
-            container.innerHTML = html;
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             jfbSwitchTab('learned');
-
-            fetch('files/reflections.md')
-                .then(function(response) {
-                    if (!response.ok) {
-                        throw new Error('Reflection file could not be loaded.');
-                    }
-                    return response.text();
-                })
-                .then(jfbRenderReflection)
-                .catch(function() {
-                    var container = document.getElementById('reflections-content');
-                    container.innerHTML = '<div class="jfr-state"><p class="jfr-state-title">Could not load reflection right now.</p><p class="jfr-state-note" style="color:#2E7D32;">Please try again soon.</p></div>';
-                });
         });
     </script>
 </section>
