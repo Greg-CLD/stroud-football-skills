@@ -306,7 +306,7 @@
             box-shadow: 0 0px 0px;
         }
 
-        /* --- TRAINING VIDEOS SECTION --- */
+        /* --- FOOTBALL VIDEOS SECTION --- */
         .jfb-videos-section {
             padding: 3rem 1.5rem;
             background-color: #81D4FA;
@@ -330,6 +330,147 @@
             font-weight: 700;
         }
 
+        /* FGR FEATURED VIDEO BLOCK */
+        .jfb-fgr-featured {
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 5px solid #4CAF50;
+            padding: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .jfb-fgr-title {
+            margin: 0 0 0.25rem 0;
+            color: #1A237E;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .jfb-fgr-intro {
+            margin: 0 0 1rem 0;
+            color: #2E7D32;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .jfb-fgr-badge {
+            display: inline-block;
+            background: #FFD54F;
+            color: #E65100;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 0px rgba(230, 81, 0, 0.2);
+        }
+
+        .jfb-fgr-iframe-wrap {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .jfb-fgr-iframe-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .jfb-fgr-video-title {
+            margin: 0.75rem 0 0 0;
+            color: #1A237E;
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .jfb-fgr-fallback {
+            padding: 1.5rem;
+        }
+
+        .jfb-fgr-fallback p {
+            margin: 0 0 1rem 0;
+            color: #4A5568;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .jfb-fgr-fallback-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 0.8rem 1.8rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            box-shadow: 0 6px 0px #388E3C;
+            transition: all 0.1s ease;
+            margin-bottom: 6px;
+        }
+
+        .jfb-fgr-fallback-btn:hover {
+            filter: brightness(1.05);
+        }
+
+        .jfb-fgr-fallback-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 0px 0px;
+        }
+
+        /* VIDEO TABS (RED VARIANT) */
+        .jfb-video-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .jfb-video-tab {
+            background: #FFFFFF;
+            border: none;
+            color: #D32F2F;
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 0 6px 0px #EF9A9A;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .jfb-video-tab:hover {
+            filter: brightness(1.05);
+        }
+
+        .jfb-video-tab.jfb-active {
+            background: #F44336;
+            color: #FFFFFF;
+            box-shadow: 0 6px 0px #D32F2F;
+        }
+
+        .jfb-video-tab:active {
+            transform: translateY(6px);
+            box-shadow: 0 0px 0px;
+        }
+
+        /* VIDEO CARD GRID */
         .jfb-videos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -355,6 +496,14 @@
             z-index: 10;
         }
 
+        .jfb-video-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .jfb-video-card-title {
             font-size: 1.35rem;
             margin: 0 0 0.5rem 0;
@@ -373,7 +522,7 @@
 
         .jfb-video-btn {
             display: inline-block;
-            background: #4CAF50;
+            background: #1976D2;
             color: #FFFFFF;
             text-decoration: none;
             border-radius: 999px;
@@ -381,7 +530,7 @@
             font-weight: 800;
             font-size: 1.05rem;
             text-transform: uppercase;
-            box-shadow: 0 6px 0px #388E3C;
+            box-shadow: 0 6px 0px #0D47A1;
             transition: all 0.1s ease;
             margin-bottom: 6px;
         }
@@ -582,12 +731,33 @@
     </div>
 
     <!-- ==================================================================
-         TRAINING VIDEOS AREA
+         FOOTBALL VIDEOS AREA
          ================================================================== -->
     <div class="jfb-videos-section">
-        <h2 class="jfb-videos-title">🎬 Training Videos</h2>
-        <p class="jfb-videos-intro">Watch these videos to level up your skills!</p>
-        <div class="jfb-videos-grid" id="jfb-videos-grid">
+        <h2 class="jfb-videos-title">🎬 Football Videos</h2>
+        <p class="jfb-videos-intro">Watch, learn, and get inspired!</p>
+
+        <!-- FGR Featured Video -->
+        <div class="jfb-fgr-featured">
+            <h3 class="jfb-fgr-title">🏟️ Latest from Forest Green Rovers</h3>
+            <p class="jfb-fgr-intro">Brand new from our local club!</p>
+            <div id="jfb-fgr-player">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Video Category Tabs -->
+        <div class="jfb-video-tabs" role="tablist" aria-label="Video Category Tabs">
+            <button class="jfb-video-tab jfb-active" role="tab" aria-selected="true" aria-controls="jfb-videos-grid" id="jfb-btn-skills" onclick="jfbSwitchVideoTab('skills')">
+                📚 Skills Training
+            </button>
+            <button class="jfb-video-tab" role="tab" aria-selected="false" aria-controls="jfb-videos-grid" id="jfb-btn-cool" onclick="jfbSwitchVideoTab('cool')">
+                🔥 Cool Moments
+            </button>
+        </div>
+
+        <!-- Video Cards Grid -->
+        <div class="jfb-videos-grid" id="jfb-videos-grid" role="tabpanel" aria-labelledby="jfb-btn-skills" aria-live="polite">
             <!-- Video cards will appear here automatically -->
         </div>
     </div>
@@ -652,22 +822,101 @@
             jfbRenderSkills(category);
         }
 
-        // VIDEO LIST — edit these entries to update the videos shown on the page
-        var jfbVideos = [
-            { title: 'Dribbling Skills for Beginners', url: 'https://www.youtube.com/watch?v=PLACEHOLDER1', description: 'Learn how to dribble past defenders.' },
-            { title: 'How to Pass Like a Pro', url: 'https://www.youtube.com/watch?v=PLACEHOLDER2', description: 'Passing tips for young players.' },
-            { title: 'Shooting Practice Drills', url: 'https://www.youtube.com/watch?v=PLACEHOLDER3', description: 'Fun drills to improve your shots.' }
+        // =====================================================
+        // SKILLS TRAINING VIDEOS
+        // Edit this list to update the skills training videos.
+        // Each entry: icon (emoji), title, url (YouTube link), description
+        // Replace PLACEHOLDER URLs with real YouTube links.
+        // =====================================================
+        var jfbSkillsVideos = [
+            { icon: '⚽', title: 'Basic Football Skills', url: 'https://www.youtube.com/watch?v=ekesFXtK8go', description: 'Learn the most important skills every young player needs.' },
+            { icon: '🦶', title: 'First Touch Drills', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_SKILLS_2', description: 'Practice controlling the ball like a pro.' },       /* PLACEHOLDER — replace with real URL */
+            { icon: '🎯', title: 'Passing and Receiving', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_SKILLS_3', description: 'Get better at passing to your teammates.' },     /* PLACEHOLDER — replace with real URL */
+            { icon: '🥅', title: 'Shooting Practice', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_SKILLS_4', description: 'Fun drills to help you score more goals.' }          /* PLACEHOLDER — replace with real URL */
         ];
 
-        function jfbRenderVideos() {
+        // =====================================================
+        // COOL FOOTBALL MOMENTS
+        // Edit this list to update the cool moments videos.
+        // Each entry: icon (emoji), title, url (YouTube link), description
+        // Replace PLACEHOLDER URLs with real YouTube links.
+        // =====================================================
+        var jfbCoolVideos = [
+            { icon: '🚲', title: 'Ronaldo Bicycle Kick', url: 'https://www.youtube.com/shorts/0FZrKXIDyB0', description: 'Watch Ronaldo score an amazing bicycle kick goal!' },
+            { icon: '🔥', title: 'Best Goals of the Year', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_COOL_2', description: 'Incredible goals from top players around the world.' },       /* PLACEHOLDER — replace with real URL */
+            { icon: '🤯', title: 'Unbelievable Football Skills', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_COOL_3', description: 'Can you believe these football tricks are real?' }, /* PLACEHOLDER — replace with real URL */
+            { icon: '⚡', title: 'Fastest Football Runs', url: 'https://www.youtube.com/watch?v=PLACEHOLDER_COOL_4', description: 'Watch the speediest players leave everyone behind.' }       /* PLACEHOLDER — replace with real URL */
+        ];
+
+        // Load FGR featured video from JSON
+        function jfbLoadFGRVideo() {
+            var container = document.getElementById('jfb-fgr-player');
+
+            fetch('data/latest-fgr-video.json')
+                .then(function(response) {
+                    if (!response.ok) throw new Error('Failed to load');
+                    return response.json();
+                })
+                .then(function(data) {
+                    if (data.videoId && data.videoId.length > 0) {
+                        container.innerHTML =
+                            '<span class="jfb-fgr-badge">🟢 FGR</span>' +
+                            '<div class="jfb-fgr-iframe-wrap">' +
+                                '<iframe src="https://www.youtube-nocookie.com/embed/' + data.videoId + '"' +
+                                ' title="Latest Forest Green Rovers video"' +
+                                ' loading="lazy"' +
+                                ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+                                ' allowfullscreen></iframe>' +
+                            '</div>' +
+                            '<p class="jfb-fgr-video-title">' + data.title + '</p>';
+                    } else {
+                        jfbShowFGRFallback(container);
+                    }
+                })
+                .catch(function() {
+                    jfbShowFGRFallback(container);
+                });
+        }
+
+        function jfbShowFGRFallback(container) {
+            container.innerHTML =
+                '<div class="jfb-fgr-fallback">' +
+                    '<p>Check out Forest Green Rovers on YouTube!</p>' +
+                    '<a class="jfb-fgr-fallback-btn" href="https://www.youtube.com/@forestgreenrovers" target="_blank" rel="noopener noreferrer">' +
+                        '▶️ Visit FGR on YouTube' +
+                    '</a>' +
+                '</div>';
+        }
+
+        // Render video cards for a given category
+        function jfbRenderVideos(category) {
             var grid = document.getElementById('jfb-videos-grid');
-            grid.innerHTML = jfbVideos.map(function(video) {
+            var list = category === 'cool' ? jfbCoolVideos : jfbSkillsVideos;
+
+            grid.innerHTML = list.map(function(video) {
                 return '<article class="jfb-video-card">' +
+                    '<div class="jfb-video-card-icon" aria-hidden="true">' + video.icon + '</div>' +
                     '<h3 class="jfb-video-card-title">' + video.title + '</h3>' +
                     '<p class="jfb-video-card-desc">' + video.description + '</p>' +
                     '<a class="jfb-video-btn" href="' + video.url + '" target="_blank" rel="noopener noreferrer">▶️ Watch Video</a>' +
                 '</article>';
             }).join('');
+        }
+
+        // Switch active video tab
+        function jfbSwitchVideoTab(category) {
+            var skillsBtn = document.getElementById('jfb-btn-skills');
+            var coolBtn = document.getElementById('jfb-btn-cool');
+            var grid = document.getElementById('jfb-videos-grid');
+
+            var isSkills = category === 'skills';
+            skillsBtn.classList.toggle('jfb-active', isSkills);
+            coolBtn.classList.toggle('jfb-active', !isSkills);
+            skillsBtn.setAttribute('aria-selected', isSkills ? 'true' : 'false');
+            coolBtn.setAttribute('aria-selected', !isSkills ? 'true' : 'false');
+            grid.setAttribute('aria-labelledby', isSkills ? 'jfb-btn-skills' : 'jfb-btn-cool');
+
+            jfbRenderVideos(category);
         }
 
         function jfbPickRandom() {
@@ -681,7 +930,8 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             jfbSwitchTab('learned');
-            jfbRenderVideos();
+            jfbLoadFGRVideo();
+            jfbSwitchVideoTab('skills');
         });
     </script>
 </section>
