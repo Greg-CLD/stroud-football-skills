@@ -29,6 +29,40 @@ jobs:
 
           RSS_URL = "https://www.youtube.com/feeds/videos.xml?channel_id=UC9hiO4pAzKontGqMaakP-Fw"
 
+          # Title keywords for ranking videos (match highlights vs other content)
+          BOOST_TERMS = [
+              "match highlights", "extended highlights", "highlights",
+              "highlight", "vs", "full-time", "full time"
+          ]
+          PENALTY_TERMS = [
+              "interview", "training", "shorts", "press conference",
+              "ticket", "behind the scenes", "preview", "reaction"
+          ]
+
+          def score_title(title):
+              t = title.lower()
+              score = 0
+              for term in BOOST_TERMS:
+                  if term in t:
+                      score += 10
+              for term in PENALTY_TERMS:
+                  if term in t:
+                      score -= 10
+              return score
+
+          def build_video(entry, ns):
+              video_id = entry.find("yt:videoId", ns).text
+              title = entry.find("atom:title", ns).text
+              published = entry.find("atom:published", ns).text
+              return {
+                  "title": title,
+                  "videoId": video_id,
+                  "publishedAt": published,
+                  "watchUrl": f"https://www.youtube.com/watch?v={video_id}",
+                  "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
+                  "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg"
+              }
+
           # Fetch the RSS feed
           req = urllib.request.Request(RSS_URL, headers={"User-Agent": "Mozilla/5.0"})
           with urllib.request.urlopen(req, timeout=30) as response:
@@ -44,24 +78,20 @@ jobs:
               "media": "http://search.yahoo.com/mrss/"
           }
 
-          # Get the first (latest) entry
-          entry = root.find("atom:entry", ns)
-          if entry is None:
+          # Get the latest 5 entries
+          entries = root.findall("atom:entry", ns)[:5]
+          if not entries:
               print("No entries found in RSS feed")
               exit(1)
 
-          video_id = entry.find("yt:videoId", ns).text
-          title = entry.find("atom:title", ns).text
-          published = entry.find("atom:published", ns).text
+          videos = [build_video(e, ns) for e in entries]
 
-          # Build the JSON data
+          # Rank: highest score first, then most recent as tiebreaker
+          videos.sort(key=lambda v: (score_title(v["title"]), v["publishedAt"]), reverse=True)
+
           data = {
-              "title": title,
-              "videoId": video_id,
-              "publishedAt": published,
-              "watchUrl": f"https://www.youtube.com/watch?v={video_id}",
-              "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
-              "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
+              "featuredVideo": videos[0],
+              "videos": videos,
               "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
           }
 
@@ -71,7 +101,9 @@ jobs:
               json.dump(data, f, indent=2, ensure_ascii=False)
               f.write("\n")
 
-          print(f"Updated: {title} ({video_id})")
+          print(f"Featured: {videos[0]['title']} (score {score_title(videos[0]['title'])})")
+          for v in videos:
+              print(f"  [{score_title(v['title']):+d}] {v['title']}")
           PYTHON_SCRIPT
 
       - name: Commit and push if changed
