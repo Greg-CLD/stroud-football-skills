@@ -1,0 +1,84 @@
+name: Fetch latest FGR video
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/**'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and parse YouTube RSS feed
+        run: |
+          python3 << 'PYTHON_SCRIPT'
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          import json
+          import os
+          from datetime import datetime, timezone
+
+          RSS_URL = "https://www.youtube.com/feeds/videos.xml?channel_id=UC9hiO4pAzKontGqMaakP-Fw"
+
+          # Fetch the RSS feed
+          req = urllib.request.Request(RSS_URL, headers={"User-Agent": "Mozilla/5.0"})
+          with urllib.request.urlopen(req, timeout=30) as response:
+              feed_xml = response.read().decode("utf-8")
+
+          # Parse the XML
+          root = ET.fromstring(feed_xml)
+
+          # YouTube RSS uses Atom namespace
+          ns = {
+              "atom": "http://www.w3.org/2005/Atom",
+              "yt": "http://www.youtube.com/xml/schemas/2015",
+              "media": "http://search.yahoo.com/mrss/"
+          }
+
+          # Get the first (latest) entry
+          entry = root.find("atom:entry", ns)
+          if entry is None:
+              print("No entries found in RSS feed")
+              exit(1)
+
+          video_id = entry.find("yt:videoId", ns).text
+          title = entry.find("atom:title", ns).text
+          published = entry.find("atom:published", ns).text
+
+          # Build the JSON data
+          data = {
+              "title": title,
+              "videoId": video_id,
+              "publishedAt": published,
+              "watchUrl": f"https://www.youtube.com/watch?v={video_id}",
+              "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
+              "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
+              "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          }
+
+          # Write JSON file
+          os.makedirs("data", exist_ok=True)
+          with open("data/latest-fgr-video.json", "w") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+
+          print(f"Updated: {title} ({video_id})")
+          PYTHON_SCRIPT
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet data/latest-fgr-video.json && echo "No changes" && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/latest-fgr-video.json
+          git commit -m "chore: update FGR featured video"
+          git push
