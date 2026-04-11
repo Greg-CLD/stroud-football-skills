@@ -1,14 +1,23 @@
 {
   "featuredVideo": {
-    "title": "Cian Harries post-match | Braintree (H)",
-    "videoId": "ksFSxLtUYuI",
-    "publishedAt": "2026-04-11T19:03:22+00:00",
-    "watchUrl": "https://www.youtube.com/watch?v=ksFSxLtUYuI",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/ksFSxLtUYuI",
-    "thumbnailUrl": "https://i.ytimg.com/vi/ksFSxLtUYuI/hqdefault.jpg",
-    "score": 0
+    "title": "Match Highlights | Forest Green Rovers 3-1 Braintree Town",
+    "videoId": "KJsF0t--4SA",
+    "publishedAt": "2026-04-11T20:00:12+00:00",
+    "watchUrl": "https://www.youtube.com/watch?v=KJsF0t--4SA",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/KJsF0t--4SA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/KJsF0t--4SA/hqdefault.jpg",
+    "score": 25
   },
   "videos": [
+    {
+      "title": "Match Highlights | Forest Green Rovers 3-1 Braintree Town",
+      "videoId": "KJsF0t--4SA",
+      "publishedAt": "2026-04-11T20:00:12+00:00",
+      "watchUrl": "https://www.youtube.com/watch?v=KJsF0t--4SA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/KJsF0t--4SA",
+      "thumbnailUrl": "https://i.ytimg.com/vi/KJsF0t--4SA/hqdefault.jpg",
+      "score": 25
+    },
     {
       "title": "Cian Harries post-match | Braintree (H)",
       "videoId": "ksFSxLtUYuI",
@@ -44,16 +53,7 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/2wWdM4afJCQ",
       "thumbnailUrl": "https://i.ytimg.com/vi/2wWdM4afJCQ/hqdefault.jpg",
       "score": 0
-    },
-    {
-      "title": "Robbie Savage pre-match | Braintree Town (A)",
-      "videoId": "xV7egakqCKw",
-      "publishedAt": "2026-04-09T09:28:36+00:00",
-      "watchUrl": "https://www.youtube.com/watch?v=xV7egakqCKw",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xV7egakqCKw",
-      "thumbnailUrl": "https://i.ytimg.com/vi/xV7egakqCKw/hqdefault.jpg",
-      "score": 0
     }
   ],
-  "fetchedAt": "2026-04-11T19:38:41Z"
+  "fetchedAt": "2026-04-11T20:40:52Z"
 }
